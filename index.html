@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport">
+<meta name="description" content="Tizen Mobile Web Basic Template" />
+<title>Породы собак</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="data:application/octet-stream;base64,d2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgewogICAgLy8gVE9ETzo6IERvIHlvdXIgaW5pdGlhbGl6YXRpb24gam9iCgogICAgLy8gYWRkIGV2ZW50TGlzdGVuZXIgZm9yIHRpemVuaHdrZXkKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3RpemVuaHdrZXknLCBmdW5jdGlvbihlKSB7CiAgICAgICAgaWYgKGUua2V5TmFtZSA9PT0gImJhY2siKSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICB0aXplbi5hcHBsaWNhdGlvbi5nZXRDdXJyZW50QXBwbGljYXRpb24oKS5leGl0KCk7CiAgICAgICAgICAgIH0gY2F0Y2ggKGlnbm9yZSkge30KICAgICAgICB9CiAgICB9KTsKCiAgICAvLyBTYW1wbGUgY29kZQogICAgdmFyIG1haW5QYWdlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI21haW4nKTsKCiAgICBtYWluUGFnZS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uKCkgewogICAgICAgIHZhciBjb250ZW50VGV4dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNjb250ZW50LXRleHQnKTsKCiAgICAgICAgY29udGVudFRleHQuaW5uZXJIVE1MID0gKGNvbnRlbnRUZXh0LmlubmVySFRNTCA9PT0gIkJhc2ljIikgPyAiVGl6ZW4iIDogIkJhc2ljIjsKICAgIH0pOwp9OwpmdW5jdGlvbiBsb2FkQ29udGVudDAocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gcGF0aDsKICBkb2N1bWVudC5mbS5vcC52YWx1ZT0iIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gIiI7CiAgfQoKZnVuY3Rpb24gbG9hZENvbnRlbnQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQu9Cw0L3QviI7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiYWxhbm8uaHRtbCI7Cn0KCmZ1bmN0aW9uIGxvYWRDb250ZW50MihwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQpNGA0LDQvdGG0YPQt9GB0LrQuNC5INCx0YPQu9GM0LTQvtCzIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJmci5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDMocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvdCz0LvQuNC50YHQutC40Lkg0JHRg9C70YzQtNC+0LMiOwogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiZW5nbC5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvNC10YDQuNC60LDQvdGB0LrQuNC5INCR0YPQu9GM0LTQvtCzIjsKCSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJhbWVyLmh0bWwiOwp9CmZ1bmN0aW9uIGxvYWRDb250ZW50NShwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQmtC+0L3RgtC40L3QtdC90YLQsNC70YzQvdGL0Lkg0JHRg9C70YzQtNC+0LMiOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNvbnQuaHRtbCI7Cn0KZnVuY3Rpb24gbG9hZENvbnRlbnQ2KHBhdGgpCnsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gcGF0aDsKICAgIGRvY3VtZW50LmZtLm9wLnZhbHVlID0gItCR0YPQu9GM0LTQvtCzINCa0LDQvNC/0LXQudGA0L4iOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNhbXAuaHRtbCI7CgkgfQ=="
+	type="text/javascript"></script>
+</head>
+
+<body>
+
+	<div  data-role="page" id="pageone">
+	<div data-role="header" style="color:orange">
+		<h1 align="center">Любовь к бульдогам</h1>
+	</div>
+	<ul>
+		<li><a href="#pageone" data-transition="flip">Главная страница</a></li>
+
+		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Бульдоги</a>
+			<div class="dropdown-content">
+				<a href="#pagetwo" data-transition="flip">Алано</a> 
+				<a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+				<a href="#pagefour" data-transition="fade">Английский Бульдог</a>
+				 <a href="#pagefive" data-transition="flip">Американский Бульдог</a> 
+				 <a href="#pagesix" data-transition="fade">Континентальный Бульдог</a> 
+				 <a href="#pageseven" data-transition="flip">Бульдог Кампейро</a>
+			</div></li>	
+	</ul>
+  <div data-role="main" class="ui-content">
+  </div>
+  	<div data-role="footer"  data-position="fixed" data-fullscreen="true">
+	      Бекк Виктория Александровна ФСИТиС 2группа 5курс © 2019
+		</div>
+</div> 
+<div data-role="page" id="pagetwo">
+  <div data-role="header" style="color:orange">
+		<h1 align="center">Алано</h1>
+  </div>
+  <ul>
+		<li><a href="#pageone">Главная страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Бульдоги</a>
+			<div class="dropdown-content">
+				<a href="#pagetwo">Алано</a> 
+				<a href="#">Французский Бульдог</a>
+				<a href="#">Английский Бульдог</a>
+				 <a href="#">Американский Бульдог</a> 
+				 <a href="#">Континентальный Бульдог</a> 
+				 <a href="#">Бульдог Кампейро</a>
+			</div></li>
+	</ul>
+  <div data-role="main" class="ui-content">
+   <div class="row">
+    <div class="col-xs-6"><img alt="Алано"  style="transform: translate(10px,0px) rotate(-30deg);width:50%;" src="images/Alano.png"></div>
+    <div class="col-xs-6"><img alt="Алано"  style="transform: translate(100px,-160px) rotate(30deg);" src="images/Alano.jpg"></div>
+    <div class="col-xs-6" style="color:#F39C12; transform:translate(0px,-300px)"><h1>Алано – загадочный представитель бульдожьей семьи  </h1></div>
+    </div>
+    <div style="transform: translate(0px,-270px)">
+        <p>Алано или испанский алано, или алано-испанский бульдог – выбирайте, что вам больше нравится.
+            Это крупные собаки, которые были выведены в Испании много веков назад, но наиболее известными
+            эта порода собак стала после того, как стала принимать участие в корриде. С тех пор утекло много лет,
+            в корриде собаки давно участия не принимают, но собаки остались, и им люди нашли другое применение.</p>
+        <h2 align="center">История</h2>
+        <p>История этой породы своими корнями уходит далеко в прошлое. Существуют документальные подтверждения того,
+            что еще в 5 веке этих собак использовало племя кочевников «Аланы», именно благодаря им собаки и получили это название. 
+            Собаки крупной породы сопровождали караваны этих кочевников в их путешествиях, охраняли жилища и животных. Потом эти же
+            собаки принимали участие в боевых действиях вместе с испанскими завоевателями, когда годы войны прошли, этих собак использовали
+            в качестве охотничьих, они отлично справлялись с охотой на крупных животных, в том числе и на медведей. Когда же и охота стала
+            не таким уж популярным развлечением, то собаки эти перекочевали на кровавые арены, где принимали участие не только в сражениях
+            с быками, но и друг с другом.
+        </p>
+        <p>Но все эти кровавые развлечения ушли в прошлое и собаки потеряли свою работу.
+            Собственно, если бы не старания испанских кинологов, то до наших дней эта порода бы не дожила.
+            Но в 60-х годах прошлого века кинологи обеспокоились практически полным исчезновением алано и стали 
+            заниматься увеличением поголовья породы. Их труды увенчались успехом и поголовье собак стало увеличиваться.
+        </p>
+        <p>
+            Самое интересное, что до этого времени не было никаких стандартов пород и кинологам пришлось восстанавливать породу по крупицам,
+            были найдены несколько особей где-то далеко в горах, где они занимались охраной овец, и уже в 70-м году был написан первый стандарт
+            породы. Собственно, после того, как поголовье собак увеличилось, кинологи просто занимались их разведением. В 2004 году эта порода 
+            собак была признана испанским кинологическим сообществом, а еще через несколько лет получила титул коренной испанской породы собак.
+            Но несмотря на эти факты, породу собак алано не признало международное сообщество, поэтому на выставках представителей этой породы 
+            собак вы не встретите. Несмотря на то, что поголовье собак увеличилось, все же она остается довольно немногочисленной и даже на 
+            родине этой породы их пока не много.
+        </p>
+        <p><b>Поэтому, если вы решите купить щенка алано у нас, вам придется для этого сильно попотеть, а может и куда-то съездить.</b></p> 
+        </div>
+  </div>
+
+	<div data-role="footer"  data-position="fixed" >
+	      Бекк Виктория Александровна ФСИТиС 2группа 5курс © 2019
+		</div>
+</div> 
+
+	</div>
+</body>
+
+</html>
