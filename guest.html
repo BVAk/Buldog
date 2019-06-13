@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport">
+<meta name="description" content="Tizen Mobile Web Basic Template" />
+<title>Породы собак</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+<script
+	src="data:application/octet-stream;base64,d2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgewogICAgLy8gVE9ETzo6IERvIHlvdXIgaW5pdGlhbGl6YXRpb24gam9iCgogICAgLy8gYWRkIGV2ZW50TGlzdGVuZXIgZm9yIHRpemVuaHdrZXkKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3RpemVuaHdrZXknLCBmdW5jdGlvbihlKSB7CiAgICAgICAgaWYgKGUua2V5TmFtZSA9PT0gImJhY2siKSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICB0aXplbi5hcHBsaWNhdGlvbi5nZXRDdXJyZW50QXBwbGljYXRpb24oKS5leGl0KCk7CiAgICAgICAgICAgIH0gY2F0Y2ggKGlnbm9yZSkge30KICAgICAgICB9CiAgICB9KTsKCiAgICAvLyBTYW1wbGUgY29kZQogICAgdmFyIG1haW5QYWdlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI21haW4nKTsKCiAgICBtYWluUGFnZS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uKCkgewogICAgICAgIHZhciBjb250ZW50VGV4dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNjb250ZW50LXRleHQnKTsKCiAgICAgICAgY29udGVudFRleHQuaW5uZXJIVE1MID0gKGNvbnRlbnRUZXh0LmlubmVySFRNTCA9PT0gIkJhc2ljIikgPyAiVGl6ZW4iIDogIkJhc2ljIjsKICAgIH0pOwp9OwpmdW5jdGlvbiBsb2FkQ29udGVudDAocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gcGF0aDsKICBkb2N1bWVudC5mbS5vcC52YWx1ZT0iIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gIiI7CiAgfQoKZnVuY3Rpb24gbG9hZENvbnRlbnQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQu9Cw0L3QviI7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiYWxhbm8uaHRtbCI7Cn0KCmZ1bmN0aW9uIGxvYWRDb250ZW50MihwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQpNGA0LDQvdGG0YPQt9GB0LrQuNC5INCx0YPQu9GM0LTQvtCzIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJmci5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDMocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvdCz0LvQuNC50YHQutC40Lkg0JHRg9C70YzQtNC+0LMiOwogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiZW5nbC5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvNC10YDQuNC60LDQvdGB0LrQuNC5INCR0YPQu9GM0LTQvtCzIjsKCSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJhbWVyLmh0bWwiOwp9CmZ1bmN0aW9uIGxvYWRDb250ZW50NShwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQmtC+0L3RgtC40L3QtdC90YLQsNC70YzQvdGL0Lkg0JHRg9C70YzQtNC+0LMiOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNvbnQuaHRtbCI7Cn0KZnVuY3Rpb24gbG9hZENvbnRlbnQ2KHBhdGgpCnsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gcGF0aDsKICAgIGRvY3VtZW50LmZtLm9wLnZhbHVlID0gItCR0YPQu9GM0LTQvtCzINCa0LDQvNC/0LXQudGA0L4iOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNhbXAuaHRtbCI7CgkgfQ=="
+	type="text/javascript"></script>
+	<script>
+	      var db;
+        //database version setting
+        var version = 1.0;
+        //database name setting
+        var dbName = "tizendb";
+        //database display name setting
+        var dbDisplayName = "tizen_test_db";
+        //database size setting
+        var dbSize = 2 * 1024 * 1024;
+ db = openDatabase(dbName, version, dbDisplayName, dbSize);
+
+ </script>
+</head>
+
+<body>
+<div data-role="page" id="guest">
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Профиль</h1>
+		</div>
+		<ul id="menu">
+		<li><a href="index.html#pageone"  data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="index.html#pagetwo" data-transition="flip">Алано</a>
+		 <a href="index.html#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="index.html#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  </ul>
+		<div data-role="main" class="ui-content">
+		 
+    <table>
+        <caption><h2>Любитель бульдогов</h2>
+            </caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>login</th>
+                <th>pass</th>
+                
+
+            </tr>
+        </thead>
+        <tbody id="tbody01">
+        </tbody>
+        <script>dataView(db);</script>
+        
+    </table>
+    <button onclick="delTable(db)">Удалить</button>
+
+		</div>
+		
+	</div>
+	
+<script src="js/guest.js"></script>
+	</body>
+	</html>

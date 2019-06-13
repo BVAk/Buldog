@@ -7,99 +7,555 @@
 <meta name="description" content="Tizen Mobile Web Basic Template" />
 <title>Породы собак</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-<script src="data:application/octet-stream;base64,d2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgewogICAgLy8gVE9ETzo6IERvIHlvdXIgaW5pdGlhbGl6YXRpb24gam9iCgogICAgLy8gYWRkIGV2ZW50TGlzdGVuZXIgZm9yIHRpemVuaHdrZXkKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3RpemVuaHdrZXknLCBmdW5jdGlvbihlKSB7CiAgICAgICAgaWYgKGUua2V5TmFtZSA9PT0gImJhY2siKSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICB0aXplbi5hcHBsaWNhdGlvbi5nZXRDdXJyZW50QXBwbGljYXRpb24oKS5leGl0KCk7CiAgICAgICAgICAgIH0gY2F0Y2ggKGlnbm9yZSkge30KICAgICAgICB9CiAgICB9KTsKCiAgICAvLyBTYW1wbGUgY29kZQogICAgdmFyIG1haW5QYWdlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI21haW4nKTsKCiAgICBtYWluUGFnZS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uKCkgewogICAgICAgIHZhciBjb250ZW50VGV4dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNjb250ZW50LXRleHQnKTsKCiAgICAgICAgY29udGVudFRleHQuaW5uZXJIVE1MID0gKGNvbnRlbnRUZXh0LmlubmVySFRNTCA9PT0gIkJhc2ljIikgPyAiVGl6ZW4iIDogIkJhc2ljIjsKICAgIH0pOwp9OwpmdW5jdGlvbiBsb2FkQ29udGVudDAocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gcGF0aDsKICBkb2N1bWVudC5mbS5vcC52YWx1ZT0iIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gIiI7CiAgfQoKZnVuY3Rpb24gbG9hZENvbnRlbnQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQu9Cw0L3QviI7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiYWxhbm8uaHRtbCI7Cn0KCmZ1bmN0aW9uIGxvYWRDb250ZW50MihwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQpNGA0LDQvdGG0YPQt9GB0LrQuNC5INCx0YPQu9GM0LTQvtCzIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJmci5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDMocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvdCz0LvQuNC50YHQutC40Lkg0JHRg9C70YzQtNC+0LMiOwogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiZW5nbC5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvNC10YDQuNC60LDQvdGB0LrQuNC5INCR0YPQu9GM0LTQvtCzIjsKCSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJhbWVyLmh0bWwiOwp9CmZ1bmN0aW9uIGxvYWRDb250ZW50NShwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQmtC+0L3RgtC40L3QtdC90YLQsNC70YzQvdGL0Lkg0JHRg9C70YzQtNC+0LMiOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNvbnQuaHRtbCI7Cn0KZnVuY3Rpb24gbG9hZENvbnRlbnQ2KHBhdGgpCnsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gcGF0aDsKICAgIGRvY3VtZW50LmZtLm9wLnZhbHVlID0gItCR0YPQu9GM0LTQvtCzINCa0LDQvNC/0LXQudGA0L4iOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNhbXAuaHRtbCI7CgkgfQ=="
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+<script
+	src="data:application/octet-stream;base64,d2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgewogICAgLy8gVE9ETzo6IERvIHlvdXIgaW5pdGlhbGl6YXRpb24gam9iCgogICAgLy8gYWRkIGV2ZW50TGlzdGVuZXIgZm9yIHRpemVuaHdrZXkKICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3RpemVuaHdrZXknLCBmdW5jdGlvbihlKSB7CiAgICAgICAgaWYgKGUua2V5TmFtZSA9PT0gImJhY2siKSB7CiAgICAgICAgICAgIHRyeSB7CiAgICAgICAgICAgICAgICB0aXplbi5hcHBsaWNhdGlvbi5nZXRDdXJyZW50QXBwbGljYXRpb24oKS5leGl0KCk7CiAgICAgICAgICAgIH0gY2F0Y2ggKGlnbm9yZSkge30KICAgICAgICB9CiAgICB9KTsKCiAgICAvLyBTYW1wbGUgY29kZQogICAgdmFyIG1haW5QYWdlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignI21haW4nKTsKCiAgICBtYWluUGFnZS5hZGRFdmVudExpc3RlbmVyKCJjbGljayIsIGZ1bmN0aW9uKCkgewogICAgICAgIHZhciBjb250ZW50VGV4dCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNjb250ZW50LXRleHQnKTsKCiAgICAgICAgY29udGVudFRleHQuaW5uZXJIVE1MID0gKGNvbnRlbnRUZXh0LmlubmVySFRNTCA9PT0gIkJhc2ljIikgPyAiVGl6ZW4iIDogIkJhc2ljIjsKICAgIH0pOwp9OwpmdW5jdGlvbiBsb2FkQ29udGVudDAocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gcGF0aDsKICBkb2N1bWVudC5mbS5vcC52YWx1ZT0iIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gIiI7CiAgfQoKZnVuY3Rpb24gbG9hZENvbnRlbnQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQu9Cw0L3QviI7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiYWxhbm8uaHRtbCI7Cn0KCmZ1bmN0aW9uIGxvYWRDb250ZW50MihwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQpNGA0LDQvdGG0YPQt9GB0LrQuNC5INCx0YPQu9GM0LTQvtCzIjsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJmci5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDMocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvdCz0LvQuNC50YHQutC40Lkg0JHRg9C70YzQtNC+0LMiOwogZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldDEnKS5zcmMgPSAiZW5nbC5odG1sIjsKfQpmdW5jdGlvbiBsb2FkQ29udGVudDQocGF0aCkKewogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQnKS5zcmMgPSBwYXRoOwogICAgZG9jdW1lbnQuZm0ub3AudmFsdWUgPSAi0JDQvNC10YDQuNC60LDQvdGB0LrQuNC5INCR0YPQu9GM0LTQvtCzIjsKCSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0MScpLnNyYyA9ICJhbWVyLmh0bWwiOwp9CmZ1bmN0aW9uIGxvYWRDb250ZW50NShwYXRoKQp7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RhcmdldCcpLnNyYyA9IHBhdGg7CiAgICBkb2N1bWVudC5mbS5vcC52YWx1ZSA9ICLQmtC+0L3RgtC40L3QtdC90YLQsNC70YzQvdGL0Lkg0JHRg9C70YzQtNC+0LMiOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNvbnQuaHRtbCI7Cn0KZnVuY3Rpb24gbG9hZENvbnRlbnQ2KHBhdGgpCnsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0Jykuc3JjID0gcGF0aDsKICAgIGRvY3VtZW50LmZtLm9wLnZhbHVlID0gItCR0YPQu9GM0LTQvtCzINCa0LDQvNC/0LXQudGA0L4iOwoJIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0YXJnZXQxJykuc3JjID0gImNhbXAuaHRtbCI7CgkgfQ=="
 	type="text/javascript"></script>
+	<script>
+	      var db;
+        //database version setting
+        var version = 1.0;
+        //database name setting
+        var dbName = "tizendb";
+        //database display name setting
+        var dbDisplayName = "tizen_test_db";
+        //database size setting
+        var dbSize = 2 * 1024 * 1024;
+ db = openDatabase(dbName, version, dbDisplayName, dbSize);
+
+ </script>
 </head>
 
 <body>
 
-	<div  data-role="page" id="pageone">
-	<div data-role="header" style="color:orange">
-		<h1 align="center">Любовь к бульдогам</h1>
-	</div>
-	<ul>
-		<li><a href="#pageone" data-transition="flip">Главная страница</a></li>
-
-		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Бульдоги</a>
-			<div class="dropdown-content">
-				<a href="#pagetwo" data-transition="flip">Алано</a> 
-				<a href="#pagethree" data-transition="flip">Французский Бульдог</a>
-				<a href="#pagefour" data-transition="fade">Английский Бульдог</a>
-				 <a href="#pagefive" data-transition="flip">Американский Бульдог</a> 
-				 <a href="#pagesix" data-transition="fade">Континентальный Бульдог</a> 
-				 <a href="#pageseven" data-transition="flip">Бульдог Кампейро</a>
-			</div></li>	
-	</ul>
-  <div data-role="main" class="ui-content">
-  </div>
-  	<div data-role="footer"  data-position="fixed" data-fullscreen="true">
-	      Бекк Виктория Александровна ФСИТиС 2группа 5курс © 2019
+	<div data-role="page" id="pageone">
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Любовь к бульдогам</h1>
 		</div>
-</div> 
-<div data-role="page" id="pagetwo">
-  <div data-role="header" style="color:orange">
-		<h1 align="center">Алано</h1>
-  </div>
-  <ul>
-		<li><a href="#pageone">Главная страница</a></li>
-		<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Бульдоги</a>
-			<div class="dropdown-content">
-				<a href="#pagetwo">Алано</a> 
-				<a href="#">Французский Бульдог</a>
-				<a href="#">Английский Бульдог</a>
-				 <a href="#">Американский Бульдог</a> 
-				 <a href="#">Континентальный Бульдог</a> 
-				 <a href="#">Бульдог Кампейро</a>
-			</div></li>
-	</ul>
-  <div data-role="main" class="ui-content">
-   <div class="row">
-    <div class="col-xs-6"><img alt="Алано"  style="transform: translate(10px,0px) rotate(-30deg);width:50%;" src="images/Alano.png"></div>
-    <div class="col-xs-6"><img alt="Алано"  style="transform: translate(100px,-160px) rotate(30deg);" src="images/Alano.jpg"></div>
-    <div class="col-xs-6" style="color:#F39C12; transform:translate(0px,-300px)"><h1>Алано – загадочный представитель бульдожьей семьи  </h1></div>
-    </div>
-    <div style="transform: translate(0px,-270px)">
-        <p>Алано или испанский алано, или алано-испанский бульдог – выбирайте, что вам больше нравится.
-            Это крупные собаки, которые были выведены в Испании много веков назад, но наиболее известными
-            эта порода собак стала после того, как стала принимать участие в корриде. С тех пор утекло много лет,
-            в корриде собаки давно участия не принимают, но собаки остались, и им люди нашли другое применение.</p>
-        <h2 align="center">История</h2>
-        <p>История этой породы своими корнями уходит далеко в прошлое. Существуют документальные подтверждения того,
-            что еще в 5 веке этих собак использовало племя кочевников «Аланы», именно благодаря им собаки и получили это название. 
-            Собаки крупной породы сопровождали караваны этих кочевников в их путешествиях, охраняли жилища и животных. Потом эти же
-            собаки принимали участие в боевых действиях вместе с испанскими завоевателями, когда годы войны прошли, этих собак использовали
-            в качестве охотничьих, они отлично справлялись с охотой на крупных животных, в том числе и на медведей. Когда же и охота стала
-            не таким уж популярным развлечением, то собаки эти перекочевали на кровавые арены, где принимали участие не только в сражениях
-            с быками, но и друг с другом.
-        </p>
-        <p>Но все эти кровавые развлечения ушли в прошлое и собаки потеряли свою работу.
-            Собственно, если бы не старания испанских кинологов, то до наших дней эта порода бы не дожила.
-            Но в 60-х годах прошлого века кинологи обеспокоились практически полным исчезновением алано и стали 
-            заниматься увеличением поголовья породы. Их труды увенчались успехом и поголовье собак стало увеличиваться.
-        </p>
-        <p>
-            Самое интересное, что до этого времени не было никаких стандартов пород и кинологам пришлось восстанавливать породу по крупицам,
-            были найдены несколько особей где-то далеко в горах, где они занимались охраной овец, и уже в 70-м году был написан первый стандарт
-            породы. Собственно, после того, как поголовье собак увеличилось, кинологи просто занимались их разведением. В 2004 году эта порода 
-            собак была признана испанским кинологическим сообществом, а еще через несколько лет получила титул коренной испанской породы собак.
-            Но несмотря на эти факты, породу собак алано не признало международное сообщество, поэтому на выставках представителей этой породы 
-            собак вы не встретите. Несмотря на то, что поголовье собак увеличилось, все же она остается довольно немногочисленной и даже на 
-            родине этой породы их пока не много.
-        </p>
-        <p><b>Поэтому, если вы решите купить щенка алано у нас, вам придется для этого сильно попотеть, а может и куда-то съездить.</b></p> 
-        </div>
-  </div>
+	<script src="js/main.js" type="text/javascript"></script>
+		<ul id="menu">
+		<li><a href="index.html#pageone" onclick="reload()" data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="#pagetwo" data-transition="flip">Алано</a>
+		 <a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  <li id="reg" style="dispay:none"><a  href="#question" data-transition="flip">Регистрация</a></li>
+		  <li id="prf" style="dispay:none"><a  href="guest.html" data-transition="flip">Профиль</a></li>
+			</ul>
+		<div data-role="main" class="ui-content">
+			<div class="col-xs-6">
+				<img alt="Французский бульдог" id="frbuldog2"
+					style="transform: translate(95%, -5%) rotate(30deg); width: 50%"
+					src="images/Бартос3.JPG">
+			</div>
+			<br>
+			<p class="main">Внешность представителей этого вида обладает
+				некоторыми характерными особенностями. Многие способны узнать этих
+				собак благодаря слегка приплюснутому носу, округлым выпуклым глазам
+				и множеству складок на мордашке. Название породы является сочетанием
+				двух слов «bull», то есть бык, и «dog» — собака. Страна
+				происхождения – Англия.</p>
+			<br>
+			<table class="table">
+				<caption>Немного о реальной стоимости покупки домашнего
+					питомца</caption>
+				<tr>
+					<th>Вид</th>
+					<th>Пол</th>
+					<th>Возраст</th>
+					<th>Цена</th>
+				</tr>
+				<tr>
+					<td>Алано</td>
+					<td>мальчик</td>
+					<td>2-3 месяца</td>
+					<td>800$</td>
+				</tr>
+				<tr>
+					<td>Французский бульдог</td>
+					<td>мальчик</td>
+					<td>2-3 месяца</td>
+					<td>500$</td>
+				</tr>
+				<tr>
+					<td>Английский бульдог</td>
+					<td>девочка</td>
+					<td>3-4 месяца</td>
+					<td>3000-7000 грн</td>
+				</tr>
+				<tr>
+					<td>Американский бульдог</td>
+					<td>девочка</td>
+					<td>3-4 месяца</td>
+					<td>4500 грн</td>
+				</tr>
+				<tr>
+					<td>Континентальный бульдог</td>
+					<td>девочка</td>
+					<td>2-3 месяца</td>
+					<td>500$</td>
+				</tr>
+				<tr>
+					<td>Бульдог Кампейро</td>
+					<td>девочка</td>
+					<td>2-3 месяца</td>
+					<td>очень редкие</td>
+				</tr>
+			</table>
 
-	<div data-role="footer"  data-position="fixed" >
-	      Бекк Виктория Александровна ФСИТиС 2группа 5курс © 2019
 		</div>
-</div> 
+		<div data-role="footer" data-position="fixed">Бекк Виктория
+			Александровна ФСИТиС 2группа 5курс © 2019</div>
+	</div>
+	<div data-role="page" id="pagetwo">
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Алано</h1>
+		</div>
+			<ul id="menu">
+		<li><a href="index.html#pageone" data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="#pagetwo" data-transition="flip">Алано</a>
+		 <a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  </ul>
+		<div data-role="main" class="ui-content">
+			<div class="row">
+				<div class="col-xs-6">
+					<img alt="Алано" style="transform: rotate(-30deg); width: 50%;"
+						src="images/Alano.png">
+				</div>
+				<div class="col-xs-6">
+					<img alt="Алано"
+						style="transform: translate(105%, -105%) rotate(30deg); width: 50%"
+						src="images/Alano.jpg">
+				</div>
+				<div class="col-xs-6"
+					style="color: #F39C12; transform: translate(2%, -160%)">
+					<h1>Алано – загадочный представитель бульдожьей семьи</h1>
+				</div>
+			</div>
+			<div style="transform: translate(0px, -15%)">
+				<p>Алано или испанский алано, или алано-испанский бульдог –
+					выбирайте, что вам больше нравится. Это крупные собаки, которые
+					были выведены в Испании много веков назад, но наиболее известными
+					эта порода собак стала после того, как стала принимать участие в
+					корриде. С тех пор утекло много лет, в корриде собаки давно участия
+					не принимают, но собаки остались, и им люди нашли другое
+					применение.</p>
+				<h2 align="center">История</h2>
+				<p>История этой породы своими корнями уходит далеко в прошлое.
+					Существуют документальные подтверждения того, что еще в 5 веке этих
+					собак использовало племя кочевников «Аланы», именно благодаря им
+					собаки и получили это название. Собаки крупной породы сопровождали
+					караваны этих кочевников в их путешествиях, охраняли жилища и
+					животных. Потом эти же собаки принимали участие в боевых действиях
+					вместе с испанскими завоевателями, когда годы войны прошли, этих
+					собак использовали в качестве охотничьих, они отлично справлялись с
+					охотой на крупных животных, в том числе и на медведей. Когда же и
+					охота стала не таким уж популярным развлечением, то собаки эти
+					перекочевали на кровавые арены, где принимали участие не только в
+					сражениях с быками, но и друг с другом.</p>
+				<p>Но все эти кровавые развлечения ушли в прошлое и собаки
+					потеряли свою работу. Собственно, если бы не старания испанских
+					кинологов, то до наших дней эта порода бы не дожила. Но в 60-х
+					годах прошлого века кинологи обеспокоились практически полным
+					исчезновением алано и стали заниматься увеличением поголовья
+					породы. Их труды увенчались успехом и поголовье собак стало
+					увеличиваться.</p>
+				<p>Самое интересное, что до этого времени не было никаких
+					стандартов пород и кинологам пришлось восстанавливать породу по
+					крупицам, были найдены несколько особей где-то далеко в горах, где
+					они занимались охраной овец, и уже в 70-м году был написан первый
+					стандарт породы. Собственно, после того, как поголовье собак
+					увеличилось, кинологи просто занимались их разведением. В 2004 году
+					эта порода собак была признана испанским кинологическим
+					сообществом, а еще через несколько лет получила титул коренной
+					испанской породы собак. Но несмотря на эти факты, породу собак
+					алано не признало международное сообщество, поэтому на выставках
+					представителей этой породы собак вы не встретите. Несмотря на то,
+					что поголовье собак увеличилось, все же она остается довольно
+					немногочисленной и даже на родине этой породы их пока не много.</p>
+				<p>
+					<b>Поэтому, если вы решите купить щенка алано у нас, вам
+						придется для этого сильно попотеть, а может и куда-то съездить.</b>
+				</p>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed">Бекк Виктория
+			Александровна ФСИТиС 2группа 5курс © 2019</div>
+	</div>
+
+	<div data-role="page" id="pagethree">
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Француз</h1>
+		</div>
+			<ul id="menu">
+		<li><a href="index.html#pageone" data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="#pagetwo" data-transition="flip">Алано</a>
+		 <a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  </ul>
+		<div data-role="main" class="ui-content">
+			<div class="row">
+				<div class="col-xs-6">
+					<img alt="Французский бульдог" id="frbuldog1" style="width: 100%;"
+						src="images/headerbackground.jpg">
+				</div>
+				<div class="col-xs-6">
+					<img alt="Французский бульдог" id="frbuldog3"
+						style="box-shadow: 0 0 10px rgba(0, 0, 0, 1); transform: translate(95%, -5%) rotate(30deg); width: 50%"
+						src="images/Бартос3.JPG">
+				</div>
+				<div class="col-xs-6"
+					style="color: #F39C12; transform: translate(2%, -10%)">
+					<h1>Французские Бульдоги – самые милые бульдожки</h1>
+				</div>
+			</div>
+			<div>
+				<p>Особенность этого вида собак кроется в их размере и форме
+					ушей. Французские Бульдоги заметно меньше по росту (до 35 см в
+					холке) и весу (8-15 кг), чем многие другие представители породы.
+					Форма ушей такая же, как и у летучих мышей – округлая и стоячая. От
+					природы у этих собак короткий хвост. Окрас щенков может быть
+					разным, от белого до черного и пятнистого.</p>
+				<p>Считается, что после того, как во Франции появились Бульдоги,
+					местные заводчики были заинтересованы вовсе не в выведении
+					бойцовских, а в создании декоративных собак. Сегодня француз
+					способен защитить себя, если потребуется, злобным рычанием и
+					гавканьем. Но при этом он предан семье, любит детей и часто
+					является любимцем людей.</p>
+
+				<p>Девиз французского бульдога: «Любить того, кто тебя
+					приручил». Это маленькая собака с формой ушей, как у летучей мыши.
+					Французский бульдог способен приспосабливаться к любой домашней
+					обстановке. Достаточно грозные снаружи, бульдоги очень добрые
+					внутри. Отличительной чертой собаки являются несколько искривленные
+					лапы и ушки, по форме напоминающие уши летучей мыши.</p>
+				<p>Порода очень популярна, таких собак можно встретиться очень
+					часто как в городах, так и в сельской местности. Собаки этой породы
+					не велики, средний их вес составляет коло 14 килограммов. Окрас
+					французских бульдогов может быть разнообразным. Шерсть короткая,
+					гладкая и блестящая. Кожа собаки морщинистая, особенно на голове и
+					чуть ниже шеи. Они могут иметь тигровую окраску в виде пятнышек и
+					полос в светлых и темных красках. Вообще, шерсть этих собак может
+					быть практически любого цвета, кроме сплошного черного. Избегайте
+					тех заводчиков, которые пытаются продать подороже щенка того или
+					иного цвета. Кроме этого, определенный окрас может быть признаком
+					генетических отклонений. Так, самки французского бульдога в палевом
+					окрасе – признак наличия генетических отклонений. Также стоит
+					насторожиться, если за один приплод собака привела только самцов
+					кремового или палевого окраса. Это считается отклонением от нормы,
+					и является основанием для того, чтобы насторожиться о состоянии
+					здоровья щенков.</p>
+				<p>Французский бульдог не нуждается в большом количестве
+					упражнений. Его можно содержать в небольших городских квартирах и в
+					огромных коттеджах. Этот домашний любимец не склонен к лаю, как
+					большинство других собак таких размеров. Бульдог – отличная
+					альтернатива для людей, которые по каким-либо причинам не могут
+					содержать активных пород.</p>
+				<p>Французский бульдог будет приносить массу позитивных эмоций.
+					Эта собака – настоящее очарование, обладает хорошим умом и
+					смекалкой, но в то же время достаточно упряма. Разводят этих
+					маленьких бульдогов уже более ста лет. Они являются отличными
+					компаньонами, любят людей и очень сильно привязываются к семье.
+					Именно поэтому французских бульдогов не стоит заводить тем, кто не
+					сможет проводить с питомцев достаточно времени. При этом необходимо
+					отметить, что содержание животного во дворе, в вольере или на цепи
+					недопустимо. Французский бульдог должен жить под одной крышей с
+					вами. Это условие связано не только с психологией животного, но
+					также с физиологическими особенностями собак с плоскими мордашками.
+					Дело в том, что такие животные очень тяжело переживают перепады
+					температуры, поэтому нуждаются в стабильной комнатной температуре.
+				</p>
+				<p>Не стоит содержать французского бульдога в одном доме с
+					кошкой, так как эти собаки не очень любят такое соседство. Еще одна
+					особенность, о которой необходимо упомянуть, является ночной храп
+					животного, вызванный особенностями строения дыхательных путей.</p>
+				<p>Собаки породы французский бульдог не весьма требовательны к
+					активным упражнениям. Достаточно будет ежедневных двадцатиминутных
+					прогулок для того, чтобы держать животное в форме. Лучше всего
+					такие прогулки совершать утром или вечером, а не в обеденный зной.
+					Как уже упоминалось, бульдоги чувствительны к перепадам температур,
+					поэтому тяжело переносят жару. Если вы любите длительные пешие
+					прогулки или пробежки, то лучше не останавливать свой выбор на этой
+					породе.</p>
+				<p>Некоторые собаководы считают, что щенка французского бульдога
+					можно брать в семью уже в возрасте 10 недель. Однако не все
+					солидарны с таким мнение. Если щенка французского бульдога оторвать
+					от матери в раннем возрасте, то это может отразиться не только на
+					его физическом развитии, но и на психологическом состоянии.
+					Замечено, что у таких щенков довольно часто развивается агрессия.</p>
+				<p>Французский бульдог лучше всего себя чувствует в тех, семьях,
+					где члены семьи проводят большинство времени с питомцем.
+					Взаимоотношение собаки с кошками и детьми не очень дружелюбное.
+					Поэтому такие собаки не подойдут для семей, где есть маленькие
+					детки. Также агрессия часто проявляется и в отношении других,
+					незнакомых собак.</p>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed">Бекк Виктория
+			Александровна ФСИТиС 2группа 5курс © 2019</div>
+	</div>
+
+	<div data-role="page" id="pagefour">
+
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Англичанин</h1>
+		</div>
+			<ul id="menu">
+		<li><a href="index.html#pageone" data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="#pagetwo" data-transition="flip">Алано</a>
+		 <a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  </ul>
+		<div data-role="main" class="ui-content">
+			<br>
+			<div id="idiv"></div>
+			<br>
+			<p>Эта порода считается прародителем вида в целом, так как именно
+				в Англии были выведены первые щенки. Изначально они пасли быков и
+				показывали в этой работе весьма неплохие успехи. Заводчики со
+				временем дополнили характер Английского Бульдога чертой агрессии,
+				скрестив его с Мопсом. После этого собаки стали активно
+				использоваться для кровавых сражений с целью всеобщего развлечения.
+			</p>
+			<p>Во внешности Американского Бульдога прослеживаются черты
+				древних молоссов и мастиффов, которые принимали участие в выведении
+				потомков. Как и все остальные виды, эти щенки сегодня обладают
+				мощной челюстью, короткой гладкой шерстью и покладистым характером.
+				Его рост может достигать 55 см, а вес – до 25 кг. Окрас допускается
+				любой.</p>
+			<h2 align=center">Характер английского бульдога</h2>
+			<p>Английские бульдоги очень серьезные и преданные собаки. Они
+				очень нуждаются в человеческом внимании и не подходят для людей,
+				которые не имеют достаточного количества времени для своих питомцев.
+			</p>
+			<p>Эта порода была выведены в качестве собак компаньонов, поэтому
+				они требуют постоянно внимания со стороны своих владельцев. Собаки
+				этой породы, как правило, очень спокойные и хорошо себя ведут, хотя
+				и считаются доминирующей породой и должны знать, кто в доме главный.
+			</p>
+			<p>Английские бульдоги очень сильно привязываются к своей семье,
+				поэтому перемена семьи является для них тяжелым ударом.</p>
+			<p>Английские бульдоги рады угодить своему хозяину, и быстро
+				понимают, что от них хотят. Они являются прекрасным компаньоном не
+				только для людей, но и для собак и других домашних животных.</p>
+			<p>Ранняя социализация важна для этой породы, прежде всего
+				потому, что некоторые английские бульдоги могут быть несколько
+				агрессивны, особенно это касается не кастрированных кобелей.</p>
+			<p>Большинство английских бульдогов хорошо подходят для
+				содержания с маленькими или взрослыми детьми, так как умеет
+				проявлять терпение по отношению к детям и пожилым людям. Однако если
+				ребенок хочет собаку, которая будет целый день бегать и играть с
+				ним, то тихоходный английский бульдог не очень хорошо подойдет на
+				такую роль.</p>
+			<p>Английский бульдог имеют уникальный характер. Некоторые люди
+				по ошибке принимают их замедленную реакцию на команды как лень, но
+				те, кто хорошо знаком с этой породой знают, что бульдоги
+				предпочитают обдумать команду, прежде чем её исполнить.</p>
+			<p>Английские бульдоги мыслители по своей природе и любят решать
+				различные задачи. Они так же очень хорошие путешественники, и с
+				удовольствием отправятся в путешествие на машине.</p>
+			<p>
+				<b>Хорошо обученный и социализированный английский бульдог
+					отличная собака компаньон.</b>
+			</p>
+
+		</div>
+		<div data-role="footer" data-position="fixed">Бекк Виктория
+			Александровна ФСИТиС 2группа 5курс © 2019</div>
 
 	</div>
+	<div data-role="page" id="question">
+		<div data-role="header" style="color: orange">
+			<h1 align="center">Регистрация</h1>
+		</div>
+			<ul id="menu">
+		<li><a href="index.html#pageone" data-transition="flip">Главная	страница</a></li>
+		<li class="dropdown"><a href="javascript:void(0)"	class="dropbtn">Бульдоги</a>
+		<div class="dropdown-content">	
+		<a href="#pagetwo" data-transition="flip">Алано</a>
+		 <a href="#pagethree" data-transition="flip">Французский Бульдог</a>
+		  <a	href="#pagefour" data-transition="fade">Английский Бульдог</a>
+		  </div>
+		  </li>	
+		  </ul>
+		<div data-role="main" class="ui-content">
+
+			<form  name="FormReg" method="POST">
+
+				<label>Почта: <input type="text" maxlength="15" size="19%"
+					name="name" id="pname"></label> <br>
+					<label>Пароль: <input type="password" maxlength="15" size="19%"
+					name="pass" id="pass"></label> <br>
+								<br> <input type="reset" value="Очистить">
+								<a href="guest.html" style="text-decoration:none"><input type="submit"  onclick="selectDB()"value="Отправить"></a>
+
+			</form>
+		</div>
+		
+	</div>
+
+
+
+
+    <script type="text/javascript">
+       function selectDB() {
+            if (window.openDatabase) {
+                //openDatabase(name, version, displayname, estimatedsize, callback);
+                db = openDatabase(dbName, version, dbDisplayName, dbSize);
+
+                
+                createTable(db);
+				var inplogin = document.getElementById("pname").value;
+				var inpage = document.getElementById("pass").value;
+				
+                //inserting data in table
+                insertData(db, inplogin, inpage);
+              
+                dataView(db);
+
+            } else {
+                alert("Web SQL Database not supported in this browser");
+            }
+        }
+
+        //reads and displays values from the table
+        function dataView(db) {
+            var html = document.getElementById("tbody01");
+            html.innerHTML = "";
+            
+            db.transaction(function (t) {
+                t.executeSql("SELECT * FROM Cryptography_tbl", [],
+                function (tran, r) {
+                    for (var i = 0; i < r.rows.length; i++) {
+                        var id = r.rows.item(i).id;
+                        var login = r.rows.item(i).login;
+                        var pass = r.rows.item(i).pass;
+                       
+                        //data list rendering
+                        if (html) {
+                            html.innerHTML += "<tr><td>" + id + "</td><td>" + login + "</td><td>" + pass +"</td></tr>";
+                        }
+
+                        //select box rendering
+                    }
+                },
+                function (t, e) { alert("Error:" + e.message); }
+             );
+            });
+        }
+
+        // create table
+        function createTable(db) {
+            db.transaction(function (t) {
+                t.executeSql("CREATE TABLE Cryptography_tbl (id INTEGER PRIMARY KEY, login TEXT, pass TEXT)", []);
+            });
+        }
+
+        //inserting data in table
+        function insertData(db, login, pass) {
+            db.transaction(function (e) {
+                //var day = new Date();
+                e.executeSql("INSERT INTO Cryptography_tbl(login, pass) VALUES (?, ?)", [login, pass], onSuccess, onError);
+            });
+        }
+
+        function onSuccess(e) { }
+        function onError(e) { }
+
+        // drop table
+        function dropTable(db) {
+            db.transaction(function (e) {
+                e.executeSql("DROP TABLE Cryptography_tbl");
+            });
+        }
+
+        //Select the data conditions
+        function dataChange(value) {
+            if (value != "all") {
+                var html = document.getElementById("tbody01");
+                html.innerHTML = "";
+                db.transaction(function (t) {
+                    t.executeSql("SELECT * FROM Cryptography_tbl WHERE id=?", [value],
+                function (tran, r) {
+                    for (var i = 0; i < r.rows.length; i++) {
+                        var id = r.rows.item(i).id;
+                        var login = r.rows.item(i).login;
+                        var pass = r.rows.item(i).pass;
+                        
+
+                        if (html) {
+                            html.innerHTML += "<tr><td>" + id + "</td><td>" + login + "</td><td>" + pass +  "</td></tr>";
+                        }
+                    }
+                },
+                function (t, e) { alert("Error:" + e.message); }
+             );
+                });
+            } else {
+                dataView(db);
+            }
+        }
+
+        window.onload = function () {
+            dataView(db);
+                    };
+    </script>
+	
+        <script>
+
+ function delTable(db) {
+  db.transaction(function (t) {
+        alert('Запис видалено!');
+        t.executeSql("DELETE FROM Cryptography_tbl");
+        window.location.href = "index.html#pageone";
+    });
+}
+</script>
+<script>
+window.onload = function () {
+createTable(db);
+			db.transaction(function (t) {			    	
+			    	  t.executeSql("SELECT COUNT(*) AS c FROM Cryptography_tbl", [],
+			    	            function (t, r) {
+			    	            	 if(r.rows.item(0).c ==1){
+			  document.getElementById("reg").style.display = "none";
+	    	  document.getElementById("prf").style.display = "block";
+	    } 
+			    	                else {
+			  document.getElementById("reg").style.display = "block";
+	    	  document.getElementById("prf").style.display = "none";
+			    	                } 
+			     // alert(r.rows.item(0).c);
+			    }, function (tx, e) {
+			      alert ("unknown: " + e.message);
+			    });
+			  });
+			  };
+</script>
+<script src="js/main0.js" type="text/javascript"></script>
 </body>
 
 </html>
